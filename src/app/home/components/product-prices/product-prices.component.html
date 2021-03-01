@@ -1,1 +1,13 @@
-<p>product-prices works!</p>
+<div class="price-item" *ngFor="let item of prices">
+  <div class="image">
+    <img
+      src="https://imagenes.preciosclaros.gob.ar/comercios/{{ item.id }}.jpg"
+    />
+  </div>
+  <div class="description">
+    <div class="name">
+      {{ item?.name }}
+    </div>
+    <div class="price">$ {{ item?.price | number: "1.2-2" }}</div>
+  </div>
+</div>

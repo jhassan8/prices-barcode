@@ -1,1 +1,32 @@
-<p>product-details works!</p>
+<ng-container *ngIf="selected">
+  <div class="image">
+    <img
+      src="https://imagenes.preciosclaros.gob.ar/productos/{{
+        selected?.product.id
+      }}.jpg"
+    />
+  </div>
+  <div class="name">
+    {{ selected?.product?.name }}
+  </div>
+  <div class="price">
+    $ {{ selected?.product.price || 0 | number: "1.2-2" }}
+  </div>
+  <div class="recomended">
+    $ {{ selected?.product?.minPrice | number: "1.2-2" }} - $
+    {{ selected?.product?.maxPrice | number: "1.2-2" }}
+  </div>
+  <div class="count">
+    <p-inputNumber
+      [(ngModel)]="selected.count"
+      [showButtons]="true"
+      min="0"
+      max="100"
+      buttonLayout="horizontal"
+      inputId="horizontal"
+      spinnerMode="horizontal"
+      incrementButtonIcon="pi pi-plus"
+      decrementButtonIcon="pi pi-minus"
+    ></p-inputNumber>
+  </div>
+</ng-container>

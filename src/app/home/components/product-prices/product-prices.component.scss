@@ -1,0 +1,28 @@
+:host {
+  padding-top: 35px;
+
+  .price-item {
+    display: flex;
+    padding: 20px 0;
+
+    .image {
+      img {
+        width: 60px;
+      }
+    }
+
+    .description {
+      color: #fff;
+      padding-left: 15px;
+
+      .name {
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 28px;
+        line-height: 42px;
+      }
+    }
+  }
+}

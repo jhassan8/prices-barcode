@@ -1,87 +1,14 @@
 <div class="p-grid">
-  <div class="p-col description-content">
-    <ng-container *ngIf="selected?.product">
-      <div class="image">
-        <img
-          src="https://imagenes.preciosclaros.gob.ar/productos/{{
-            selected?.product.id
-          }}.jpg"
-        />
-      </div>
-      <div class="name">
-        {{ selected?.product?.name }}
-      </div>
-      <div class="price">$ {{ selected?.product.price || 0 | number: "1.2-2" }}</div>
-      <div class="recomended">
-        $ {{ selected?.product?.minPrice | number: "1.2-2" }} - $
-        {{ selected?.product?.maxPrice | number: "1.2-2" }}
-      </div>
-      <div class="count">
-        <p-inputNumber
-          [(ngModel)]="selected.count"
-          [showButtons]="true"
-          min="0"
-          max="100"
-          buttonLayout="horizontal"
-          inputId="horizontal"
-          spinnerMode="horizontal"
-          incrementButtonIcon="pi pi-plus"
-          decrementButtonIcon="pi pi-minus"
-        ></p-inputNumber>
-      </div>
-    </ng-container>
+  <div class="p-col">
+    <app-product-details [selected]="selected"> </app-product-details>
   </div>
-  <div class="p-col prices-content">
-    <ng-container *ngIf="selected?.product">
-      <div class="price-item" *ngFor="let item of selected?.product.prices">
-        <div class="image">
-          <img
-            src="https://imagenes.preciosclaros.gob.ar/comercios/{{
-              item.id
-            }}.jpg"
-          />
-        </div>
-        <div class="description">
-          <div class="name">
-            {{ item?.name }}
-          </div>
-          <div class="price">$ {{ item?.price | number: "1.2-2" }}</div>
-        </div>
-      </div>
-    </ng-container>
+  <div class="p-col">
+    <app-product-prices [prices]="selected.product.prices"></app-product-prices>
   </div>
   <div class="p-col products-content">
-    <ng-container *ngIf="cart">
-      <div class="product-item" *ngFor="let item of cart" (click)="change(item)">
-        <div class="information">
-          <div class="image">
-            <img
-              src="https://imagenes.preciosclaros.gob.ar/productos/{{
-                item?.id
-              }}.jpg"
-            />
-          </div>
-          <div class="description">
-            <div class="name">
-              {{ item?.product.name }}
-            </div>
-            <div class="price">$ {{ item.product.price || 0 | number: "1.2-2" }}</div>
-          </div>
-        </div>
-        <div class="count">
-          <p-inputNumber
-            [(ngModel)]="item.count"
-            [showButtons]="true"
-            min="0"
-            max="100"
-            buttonLayout="horizontal"
-            inputId="horizontal"
-            spinnerMode="horizontal"
-            incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"
-          ></p-inputNumber>
-        </div>
-      </div>
-    </ng-container>
+    <app-product-cart
+      [cart]="cart"
+      (select)="change($event)"
+    ></app-product-cart>
   </div>
 </div>
