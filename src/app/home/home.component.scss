@@ -1,0 +1,144 @@
+:host ::ng-deep {
+  .count {
+    p-inputNumber {
+      button {
+        border-radius: 50px !important;
+        background-color: #ed3330;
+        border-color: #ed3330;
+        transition: all 0.4s ease 0s;
+
+        &:hover {
+          background-color: #ed3330;
+          border-color: #ed3330;
+          transform: scale(1.3);
+        }
+      }
+
+      input {
+        background-color: transparent;
+        border-color: transparent;
+        color: #fff;
+        text-align: center;
+        width: 83px;
+        font-size: 30px;
+        height: 36px;
+        font-weight: bold;
+
+        &:focus {
+          box-shadow: none;
+          border: transparent;
+        }
+
+        &:hover {
+          border: transparent;
+        }
+      }
+    }
+  }
+}
+
+.description-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 !important;
+  height: 100%;
+
+  .image {
+    img {
+    }
+  }
+
+  .name {
+    color: #fff;
+    font-size: 23px;
+    width: 70%;
+    text-align: center;
+    padding: 23px;
+  }
+
+  .price {
+    color: #fff;
+    font-size: 43px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .recomended {
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    padding: 23px;
+  }
+
+  .count {
+    padding: 53px;
+  }
+}
+
+.prices-content {
+  padding-top: 35px;
+
+  .price-item {
+    display: flex;
+    padding: 20px 0;
+
+    .image {
+      img {
+        width: 60px;
+      }
+    }
+
+    .description {
+      color: #fff;
+      padding-left: 15px;
+
+      .name {
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 28px;
+        line-height: 42px;
+      }
+    }
+  }
+}
+
+.products-content {
+  padding-top: 35px;
+
+  .product-item {
+    padding: 20px 0;
+
+    .information {
+      display: flex;
+
+      .image {
+        img {
+          width: 60px;
+        }
+      }
+
+      .description {
+        color: #fff;
+        padding-left: 15px;
+
+        .name {
+          font-size: 18px;
+        }
+
+        .price {
+          font-size: 28px;
+          line-height: 42px;
+        }
+      }
+    }
+
+    .count {
+      transform: scale(0.8);
+      text-align: center;
+    }
+  }
+}
